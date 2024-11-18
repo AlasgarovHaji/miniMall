@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .sidebar {
+    width: 200px;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .floorButton {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  .floorButton:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .active {
+    background-color: #ddd;
+  }
+  
+  .backButton {
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #ccc;
+    border: none;
+  }
+  
+  .content {
+    padding: 10px;
+    flex: 1;
+  }
+  
+  .restaurantButton {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  .restaurantButton:hover {
+    background-color: #f0f0f0;
+  }
+  
