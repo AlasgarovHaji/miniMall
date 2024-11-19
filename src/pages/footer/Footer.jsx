@@ -53,7 +53,7 @@ function Footer() {
           <h2>Bizi İzləyin</h2>
           <div className={styles.socialIcons}>
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/minimall__official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -79,9 +79,8 @@ function Footer() {
           >
             <h3>İş Saatları</h3>
             <ul>
-              <li>Bazar ertəsi: 09:00 - 18:00</li>
-              <li>Çərşənbə axşamı: 09:00 - 18:00</li>
-              <li>Çərşənbə: 09:00 - 18:00</li>
+              <li>Həftənin bütün günləri: 09:00 - 22:00</li>
+              
               {/* Üç əlavə sətir əlavə edə bilərsiniz */}
             </ul>
             <button onClick={togglePopup} className={styles.closeButton}>

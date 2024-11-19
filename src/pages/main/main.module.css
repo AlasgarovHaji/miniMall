@@ -1,11 +1,11 @@
 .main {
     position: relative;
     width: 100%;
-    height: 80vh; /* Ekranın 60% hündürlüyü */
+    height: 80vh;
     overflow: hidden;
-    display: flex; /* Flexbox ilə mərkəzləşdirmək */
-    justify-content: center; /* Horizontal mərkəzləşdirmə */
-    align-items: center; /* Vertikal mərkəzləşdirmə */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -23,22 +23,25 @@
 
 .newsContainer {
     display: flex;
-    align-items: center; /* Düymələri mərkəzləşdirir */
+    align-items: center;
     justify-content: center;
     margin-top: 20px;
-    width: 100%; /* 100% genişlik */
+    flex-wrap: wrap; /* Kartları sarmalayarak alt satıra taşı */
+    width: 100%;
 }
 
 .cardWrapper {
-    display: flex; /* Kartların yan-yana düzülməsi üçün flex */
-    transition: transform 0.5s ease; /* Kartlar arasında keçid animasiyası */
+    display: flex;
+    flex-wrap: wrap; /* Kartların alt satıra geçmesine izin ver */
+    justify-content: center; /* Kartları ortala */
+    transition: transform 0.5s ease;
 }
 
 .cardImage {
-    width: 100%; /* Kartın tam genişliyini əhatə etsin */
-    height: 150px; /* Hündürlüyü istədiyin ölçüyə gətir */
-    object-fit: cover; /* Şəkilin ölçüsünü korumadan əhatə etsin */
-    border-radius: 10px 10px 0 0; /* Yalnız üst kənarını yuvarla */
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
 }
 
 .card {
@@ -47,7 +50,7 @@
     border-radius: 10px;
     padding: 20px;
     margin: 10px;
-    width: calc(20% - 20px); /* 5 kart üçün uyğun genişlik */
+    width: calc(25% - 20px); /* 4 kart için uygun genişlik */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -56,45 +59,62 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Arrow button styles */
 .arrowButton {
-    background-color: transparent; /* Arxa fonu şəffaf */
-    border: 2px solid #000; /* Mavi sərhəd */
-    border-radius: 5px; /* Küncləri yuvarlat */
-    padding: 10px 15px; /* İçəridə boşluq */
+    background-color: transparent;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 10px 15px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Effektlər */
-    position: relative; /* Düzgün yerləşmə üçün */
-}
-
-.arrowButton.left::before {
-    content: '←'; /* Sol arrow simvolu */
-    font-size: 20px; /* Simvolun ölçüsü */
-    position: absolute; /* Yerləşməni idarə etmək üçün */
-    left: 10px; /* Soldan boşluq */
-    transition: transform 0.3s ease; /* Effekt */
-}
-
-.arrowButton.right::before {
-    content: '→'; /* Sağa arrow simvolu */
-    font-size: 20px; /* Simvolun ölçüsü */
-    position: absolute; /* Yerləşməni idarə etmək üçün */
-    right: 10px; /* Sağdan boşluq */
-    transition: transform 0.3s ease; /* Effekt */
-}
-
-.arrowButton:hover::before {
-    transform: translateX(-5px); /* Hover zamanı sol tərəfə hərəkət */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .arrowButton:hover {
-    background-color: #007bff; /* Hover zamanı arxa fon mavi */
-    color: white; /* Yazının rəngi */
-}
- 
-h2{
-    padding: 20px;
+    background-color: #007bff;
+    color: white;
 }
 h3{
     padding: 20px;
+}
+h2{
+    padding-top: 20px;
+}
+/* Tablet ve küçük ekranlar */
+@media screen and (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* 2 kart yan yana */
+    }
+
+    .cardImage {
+        height: 120px; /* Kart resimleri daha küçük */
+    }
+
+    .main {
+        height: 60vh; /* Ana carousel daha küçük */
+    }
+}
+
+/* Mobil cihazlar */
+@media screen and (max-width: 480px) {
+    .card {
+        width: 100%; /* Kartlar tam genişlikte */
+        margin: 10px 0; /* Daha küçük marjin */
+    }
+
+    .cardImage {
+        height: 100px; /* Daha küçük resim yüksekliği */
+    }
+
+    .main {
+        height: 50vh; /* Ana carousel daha küçük */
+    }
+
+    .arrowButton {
+        padding: 5px 10px; /* Daha küçük buton boyutları */
+        font-size: 14px; /* Daha küçük yazı */
+    }
+
+    h2, h3 {
+        padding: 10px;
+        font-size: 18px; /* Başlıklar daha küçük */
+    }
 }
