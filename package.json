@@ -3,14 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/AlasgarovHaji/miniMall",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "preview": "vite preview"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
@@ -18,7 +15,7 @@
     "react-bootstrap": "^2.10.5",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
-    "serve": "^14.2.4"
+    "swiper": "^11.1.15"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

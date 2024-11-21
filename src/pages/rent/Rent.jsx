@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './rent.module.css';
+
 const Rent = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -9,6 +10,7 @@ const Rent = () => {
         productType: ''
     });
     const [errors, setErrors] = useState({});
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -16,6 +18,7 @@ const Rent = () => {
             [name]: value
         });
     };
+
     const validate = () => {
         let tempErrors = {};
         let isValid = true;
@@ -42,6 +45,7 @@ const Rent = () => {
         setErrors(tempErrors);
         return isValid;
     };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (validate()) {
@@ -49,9 +53,10 @@ const Rent = () => {
             alert("Məlumatlar uğurla yadda saxlanıldı!");
         }
     };
+
     return (
         <div className={styles.formContainer}>
-            <h2>İcarə Üçün Müraciət</h2>
+            <h2>İCARƏ ÜÇÜN MÜRACİƏT</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <input
@@ -113,4 +118,5 @@ const Rent = () => {
         </div>
     );
 };
+
 export default Rent;

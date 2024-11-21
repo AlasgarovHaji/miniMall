@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from "./main.module.css";
 import Img from "../../assets/react.svg"
+import Restaurant from '../restaurant/Restaurant';
+
 function Main() {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
@@ -19,49 +21,19 @@ function Main() {
       <div className={styled.main}>
         <img src={images[currentImage]} alt="Carousel" className={styled.carouselImage} />
       </div>
+      <br /><br />
+
+      
       <h2 style={{ fontFamily: "Roboto, sans-serif" }}>Mağazalar</h2>
       <Maghazalar />
       <br />
       <br />
       <h2 style={{ fontFamily: "Roboto, sans-serif" }}>Restoranlar</h2>
-       <h3 style={{ fontFamily: "Roboto, sans-serif" }}>Tezlikə xidmətinizdə...</h3>
+      <Restaurant />
     </>
   );
 }
-function Xeberler() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const newsItems = [
-    { image: "/src/assets/news1.webp", description: "Bu, xəbər 1-in qısa təsviridir." },
-    { image: "/src/assets/news2.png", description: "Bu, xəbər 2-in qısa təsviridir." },
-    { image: "/src/assets/news3.png", description: "Bu, xəbər 3-in qısa təsviridir." },
-    { image: "/src/assets/news4.png", description: "Bu, xəbər 4-in qısa təsviridir." },
-  ];
-  const itemsPerPage = 4;
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % newsItems.length);
-  };
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + newsItems.length) % newsItems.length);
-  };
-  const displayedItems = [];
-  for (let i = 0; i < itemsPerPage; i++) {
-    displayedItems.push(newsItems[(currentIndex + i) % newsItems.length]);
-  }
-  return (
-    <div className={styled.newsContainer}>
-      <button className={styled.arrowButton} onClick={handlePrev}>←</button>
-      <div className={styled.cardWrapper}>
-        {displayedItems.map((item, index) => (
-          <div key={index} className={styled.card}>
-            <img src={item.image} alt={`News ${index + currentIndex + 1}`} className={styled.cardImage} />
-            <p>{item.description}</p>
-          </div>
-        ))}
-      </div>
-      <button className={styled.arrowButton} onClick={handleNext}>→</button>
-    </div>
-  );
-}
+
 function Maghazalar() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const newsItems = [
@@ -97,7 +69,7 @@ function Maghazalar() {
       <button className={styled.arrowButton} onClick={handlePrev}>←</button>
       <div className={styled.cardWrapper}>
         {displayedItems.map((item, index) => (
-          <div key={index} className={styled.card} style={{ fontFamily: "Roboto, sans-serif",textAlign:"center" }}>
+          <div key={index} className={styled.card} style={{ fontFamily: "Roboto, sans-serif", textAlign: "center" }}>
             <img src={item.image} alt={`News ${index + currentIndex + 1}`} className={styled.cardImage} />
             <p>{item.description}</p>
           </div>
@@ -107,39 +79,5 @@ function Maghazalar() {
     </div>
   );
 }
-function Restoranlar() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const newsItems = [
-    { image: "/src/assets/r1.jpg", description: "Bu, Restoran 1-in qısa təsviridir." },
-    { image: "/src/assets/r2.jpeg", description: "Bu, Restoran 2-in qısa təsviridir." },
-    { image: "/src/assets/soulcoffee.jpeg", description: "Bu, Restoran 3-in qısa təsviridir." },
-    { image: "/src/assets/pizza.jpeg", description: "Bu, Restoran 4-in qısa təsviridir." },
-    { image: "/src/assets/r2.jpg", description: "Bu, Restoran 5-in qısa təsviridir." },
-  ];
-  const itemsPerPage = 4;
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % newsItems.length);
-  };
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + newsItems.length) % newsItems.length);
-  };
-  const displayedItems = [];
-  for (let i = 0; i < itemsPerPage; i++) {
-    displayedItems.push(newsItems[(currentIndex + i) % newsItems.length]);
-  }
-  return (
-    <div className={styled.newsContainer}>
-      <button className={styled.arrowButton} onClick={handlePrev}>←</button>
-      <div className={styled.cardWrapper}>
-        {displayedItems.map((item, index) => (
-          <div key={index} className={styled.card}>
-            <img src={item.image} alt={`News ${index + currentIndex + 1}`} className={styled.cardImage} />
-            <p >{item.description}</p>
-          </div>
-        ))}
-      </div>
-      <button className={styled.arrowButton} onClick={handleNext}>→</button>
-    </div>
-  );
-}
+
 export default Main;

@@ -1,40 +1,120 @@
+/* Konteyner */
 .formContainer {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #F9F9F9;
+    max-width: 600px;
+    margin: 10px auto; /* Margini 10px-ə endirdik */
+    padding: 40px;
+    border-radius: 20px;
+    background-color: #fff; /* Arxa fonu ağ etdik */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+    overflow: hidden;
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 h2 {
     text-align: center;
-    font-size: 1.5em;
-    margin-bottom: 20px;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    color: #333; /* Başlıq rəngini daha uyğun bir ton etdik */
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
+
+/* Giriş Alanı */
 .inputField {
     width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #FCFCFC;
+    padding: 15px;
+    margin: 12px 0;
+    border: 2px solid #ddd; /* Sərhədin rəngini daha yüngül etdik */
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 1.1em;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
 }
+
+.inputField:focus {
+    outline: none;
+    border-color: #ff6f61;
+    box-shadow: 0 0 8px rgba(255, 111, 97, 0.5);
+    transform: scale(1.05);
+}
+
+/* Hata Mesajı */
+.error {
+    color: #ff6f61;
+    font-size: 0.9em;
+    margin-top: -8px;
+    margin-bottom: 10px;
+}
+
+/* Save Button */
 .saveButton {
     width: 100%;
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1em;
+    padding: 15px;
+    background-color: #fff; /* Arxa fon ağ oldu */
+    color: #333; /* Mətnin rəngi qara oldu */
+    border: 2px solid #333; /* Qara sərhəd əlavə etdik */
+    border-radius: 8px;
+    font-size: 1.2em;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
 .saveButton:hover {
-    background-color: #0056B3;
+    background-color: #333; /* Hover zamanı arxa fon qara olacaq */
+    color: #fff; /* Mətnin rəngi ağ olacaq */
+    transform: translateY(-3px);
 }
-.error {
-    color: red;
-    font-size: 0.8em;
-    margin-top: -10px;
-    margin-bottom: 10px;
+
+.saveButton:active {
+    background-color: #555; /* Tıklananda fon daha açıq qara olacaq */
+    color: #fff; /* Mətn ağ qalacaq */
+    transform: translateY(2px);
+}
+
+/* Responsive Dizayn */
+@media screen and (max-width: 768px) {
+    .formContainer {
+        width: 90%;
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .inputField {
+        font-size: 1.05em;
+    }
+
+    .saveButton {
+        font-size: 1.15em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .formContainer {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .inputField {
+        padding: 10px;
+    }
+
+    .saveButton {
+        padding: 12px;
+    }
 }

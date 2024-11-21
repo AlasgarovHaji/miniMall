@@ -1,12 +1,12 @@
+/* Ana stil */
 .main {
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 80vh; /* Ekranın 80% hündürlüyü */
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+    display: flex; /* Flexbox ilə mərkəzləşdirmək */
+    justify-content: center; /* Horizontal mərkəzləşdirmə */
+    align-items: center; /* Vertikal mərkəzləşdirmə */
 }
 
 .carouselImage {
@@ -23,22 +23,23 @@
 
 .newsContainer {
     display: flex;
-    align-items: center;
+    align-items: center; /* Düymələri mərkəzləşdirir */
     justify-content: center;
     margin-top: 20px;
-    flex-wrap: wrap; /* Kartları sarmalayarak alt satıra taşı */
-    width: 100%;
+    width: 100%; /* 100% genişlik */
+    gap: 20px; /* Kartlar arasındaki mesafeyi artırdık */
 }
 
 .cardWrapper {
     display: flex;
-    flex-wrap: wrap; /* Kartların alt satıra geçmesine izin ver */
-    justify-content: center; /* Kartları ortala */
+    justify-content: center; /* Kartları merkeziye hizala */
+    align-items: center; /* Yatay ve dikey ortalamak için */
     transition: transform 0.5s ease;
+    gap: 20px; /* Kartlar arasındaki mesafe */
 }
 
 .cardImage {
-    width: 100%;
+    width: 100%; 
     height: 150px;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
@@ -50,7 +51,11 @@
     border-radius: 10px;
     padding: 20px;
     margin: 10px;
-    width: calc(25% - 20px); /* 4 kart için uygun genişlik */
+    width: 200px; /* Kartların genişliyi */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -69,52 +74,50 @@
 }
 
 .arrowButton:hover {
-    background-color: #007bff;
+    background-color: #000;
     color: white;
 }
-h3{
-    padding: 20px;
-}
-h2{
-    padding-top: 20px;
-}
-/* Tablet ve küçük ekranlar */
-@media screen and (max-width: 768px) {
-    .card {
-        width: calc(50% - 20px); /* 2 kart yan yana */
-    }
 
-    .cardImage {
-        height: 120px; /* Kart resimleri daha küçük */
-    }
-
+/* Mobil responsivlik */
+@media (max-width: 768px) {
     .main {
-        height: 60vh; /* Ana carousel daha küçük */
+        height: 60vh; /* Mobil ekranlarda daha az yükseklik */
     }
-}
 
-/* Mobil cihazlar */
-@media screen and (max-width: 480px) {
+    .carouselImage {
+        object-fit: contain; /* Mobildə şəkilin pozulmasının qarşısını alır */
+    }
+
+    .newsContainer {
+        flex-direction: column; /* Kartlar və düymələr dikey sıraya yerləşəcək */
+        gap: 10px; /* Kartlar arasındakı məsafə kiçildilib */
+    }
+
+    .cardWrapper {
+        flex-direction: column; /* Kartlar mobil ekranlarda dikey yerləşəcək */
+        gap: 10px; /* Kartlar arasındakı məsafə */
+    }
+
     .card {
-        width: 100%; /* Kartlar tam genişlikte */
-        margin: 10px 0; /* Daha küçük marjin */
-    }
-
-    .cardImage {
-        height: 100px; /* Daha küçük resim yüksekliği */
-    }
-
-    .main {
-        height: 50vh; /* Ana carousel daha küçük */
+        width: 90%; /* Kartlar mobildə daha geniş olacaq */
     }
 
     .arrowButton {
-        padding: 5px 10px; /* Daha küçük buton boyutları */
-        font-size: 14px; /* Daha küçük yazı */
+        padding: 8px 12px; /* Düymlərin ölçüsünü kiçiltmək */
+    }
+}
+
+/* Tablet boyutları üçün */
+@media (max-width: 1024px) {
+    .newsContainer {
+        gap: 15px; /* Tablet üçün daha geniş boşluq */
     }
 
-    h2, h3 {
-        padding: 10px;
-        font-size: 18px; /* Başlıklar daha küçük */
+    .cardWrapper {
+        gap: 15px; /* Tablet üçün daha geniş məsafə */
+    }
+
+    .card {
+        width: 250px; /* Tablet üçün kartların ölçüsünü artırdıq */
     }
 }
