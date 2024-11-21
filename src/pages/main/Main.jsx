@@ -24,7 +24,7 @@ function Main() {
       <br /><br />
 
       
-      <h2 style={{ fontFamily: "Roboto, sans-serif" }}>Mağazalar</h2>
+      <h2 style={{ fontFamily: "Roboto, sans-serif" }}>Mağazalarşşş</h2>
       <Maghazalar />
       <br />
       <br />
