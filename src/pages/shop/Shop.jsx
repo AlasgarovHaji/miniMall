@@ -34,7 +34,7 @@ function Shop() {
 
   return (
     <div className={styles.shopContainer}>
-      <h1 className={styles.title}>Mağazalar</h1>
+      <h1 className={styles.title}>Mağazalar !!!</h1>
           <input
         type="text"
         placeholder="Mağaza adını axtarın..."
